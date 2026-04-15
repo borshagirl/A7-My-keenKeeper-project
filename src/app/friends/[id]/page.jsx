@@ -1,5 +1,11 @@
 import Image from "next/image";
 
+import { MdAddIcCall } from "react-icons/md";
+import { BsChatText } from "react-icons/bs";
+import { BiVideo } from "react-icons/bi";
+import { RiNotificationSnoozeLine } from "react-icons/ri";
+
+
 const FriendDetailPage = async ({ params }) => {
     // Handle both Promise and regular object
     const resolvedParams = await params;
@@ -46,9 +52,7 @@ const FriendDetailPage = async ({ params }) => {
   alt="image"
   width={100}
   height={100}
-  > 
-    
-    
+  >   
   </Image>
 
   <h2 className="text-xl font-semibold">{friend.name}</h2>
@@ -57,7 +61,7 @@ const FriendDetailPage = async ({ params }) => {
     {friend.status}
   </span>
 
-  <div className="flex justify-center gap-2 flex-wrap">
+  <div className="flex justify-center gap-2 flex-wrap mt-2">
     {friend.tags.map((tag, indx) => (
       <span key={indx} className="bg-green-100 px-2 py-1 rounded text-xs">
         {tag}
@@ -69,7 +73,7 @@ const FriendDetailPage = async ({ params }) => {
   <p className="text-sm text-gray-400">{friend.email}</p>
 </div>
 <div className="space-y-2">
-  <button className="w-full border p-2 rounded">⏰ Snooze 2 Weeks</button>
+  <button className="w-full border p-2 rounded"><RiNotificationSnoozeLine /> Snooze 2 Weeks</button>
   <button className="w-full border p-2 rounded">📦 Archive</button>
   <button className="w-full border p-2 rounded text-red-500">🗑️ Delete</button>
 </div>
@@ -103,16 +107,16 @@ const FriendDetailPage = async ({ params }) => {
     <p className="text-gray-500">Connect every {friend.goal} days</p>
   </div>
 
-  <button className="border px-3 py-1 rounded">Edit</button>
+  <button className="btn">Edit</button>
 </div>
 
 <div className="bg-white p-4 rounded shadow">
   <h3 className="mb-3 font-semibold">Quick Check-In</h3>
 
   <div className="grid grid-cols-3 gap-3">
-    <button className="border p-3 rounded">📞 Call</button>
-    <button className="border p-3 rounded">💬 Text</button>
-    <button className="border p-3 rounded">🎥 Video</button>
+    <button className="border p-3 rounded "><MdAddIcCall className="m-0 mx-auto text-2xl"/> Call</button>
+    <button className="border p-3 rounded"><BsChatText className="m-0 mx-auto text-2xl" /> Text</button>
+    <button className="border p-3 rounded"><BiVideo className="m-0 mx-auto text-2xl" /> Video</button>
   </div>
 </div>
 
