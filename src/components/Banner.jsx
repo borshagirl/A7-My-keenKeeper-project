@@ -1,9 +1,9 @@
 
-import React from 'react';
+
 
 const Banner = () => {
     return (
-        <div>
+        <div className='mb-5'>
             <div className="p-10 text-center space-y-4">
                 <h2 className="font-bold text-2xl">Friends to keep close in your life</h2>
                 <p className="text-sm text-gray-500">Your personal shelf of meaningful connections. Browse, tend, and nurture the <br /> relationships that matter most.</p>
