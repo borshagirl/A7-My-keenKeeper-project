@@ -10,7 +10,7 @@ import { MdAddIcCall } from "react-icons/md";
 const TimelinePage = () => {
 
     const [data, setData] = useState([]);
-    const [filter, setFilter] = useState('All');
+    const [filter, setFilter] = useState('Filter Timeline');
 
     useEffect(() => {
     const stored = JSON.parse(localStorage.getItem("timeline")) || []
@@ -18,17 +18,17 @@ const TimelinePage = () => {
     }, [])
 
     const filteredData =
-  filter === "All"
+    filter === 'Filter Timeline'
     ? data
     : data.filter(item => item.type === filter)
 
 
 
    return (
-  <div className="w-[80vw] mx-auto space-y-4">
+   <div className="w-[80vw] mx-auto space-y-4">
 
     <select className="btn btn-outline" onChange={(e) => setFilter(e.target.value)}>
-      <option>All</option>
+      <option>Filter Timeline</option>
       <option>Call</option>
       <option>Text</option>
       <option>Video</option>
@@ -38,7 +38,7 @@ const TimelinePage = () => {
    {filteredData.map(item => (
   <div
     key={item.id}
-    className="bg-white p-4 rounded-xl shadow flex justify-between items-center"
+    className="bg-white p-4 rounded-xl shadow-md space-y-1"
   >
 
     {/* LEFT */}
@@ -54,12 +54,12 @@ const TimelinePage = () => {
       {/* Text */}
       <div>
         <h3 className="font-semibold">{item.title}</h3>
-        <p className="text-sm text-gray-500">{item.type}</p>
+        
       </div>
     </div>
 
     {/* RIGHT (Date) */}
-    <p className="text-sm text-gray-400">
+    <p className="text-sm text-gray-600">
       {item.date}
     </p>
 

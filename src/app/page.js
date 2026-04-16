@@ -5,7 +5,7 @@ import Stats from "@/components/Stats";
 
 export default async function Home() {
 
-    const res = await fetch('http://localhost:3001/friends.json')
+    const res = await fetch('http://localhost:3000/friends.json')
     const friends = await res.json();
     // console.log(friends);
 
