@@ -25,7 +25,7 @@ const TimelinePage = () => {
 
 
    return (
-   <div className="w-[80vw] mx-auto space-y-4">
+   <div className="w-[80vw] mx-auto space-y-4 mt-5">
 
     <select className="btn btn-outline" onChange={(e) => setFilter(e.target.value)}>
       <option>Filter Timeline</option>

@@ -9,6 +9,7 @@ import { BsArchive, BsChatText } from "react-icons/bs";
 import { BiVideo } from "react-icons/bi";
 import { RiDeleteBin6Line, RiNotificationSnoozeLine } from "react-icons/ri";
 import { FaClockRotateLeft } from "react-icons/fa6";
+import { toast } from "react-toastify";
 
 const FriendDetailPage = () => {
 
@@ -42,6 +43,7 @@ const FriendDetailPage = () => {
       title: `${type} with ${friend.name}`,
       date: new Date().toDateString()
     }
+    toast.success(`Added ${type}`)
 
     const oldData = JSON.parse(localStorage.getItem("timeline")) || []
     const updated = [newEntry, ...oldData]
@@ -57,6 +59,7 @@ const FriendDetailPage = () => {
 
     localStorage.setItem("timeline", JSON.stringify(updated))
     setTimeline(updated)
+    toast.success("deleted");
 }
 
 
